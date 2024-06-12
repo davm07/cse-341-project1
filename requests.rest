@@ -1,0 +1,14 @@
+##############Requests using REST CLIENT in vscode##############
+
+###Requests locally###
+    ### Get all contacts
+    GET http://localhost:3000/contacts
+
+    ### Get a single contact
+    GET http://localhost:3000/contacts/66686d80f56eb6d8692b3c11
+###Requests using deployed api in Render###
+    ### Get all contacts
+    GET https://cse-341-project1.render.com/contacts
+
+    ### Get a single contact
+    GET https://cse-341-project1.render.com/contacts/66686d80f56eb6d8692b3c11
