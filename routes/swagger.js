@@ -4,7 +4,7 @@ const swaggerDocument = require('../swagger.json');
 
 const options = {
   customCss: '.swagger-ui .topbar { display: none }',
-  customSiteTitle: 'Temples API'
+  customSiteTitle: 'Contacts API'
 };
 
 router.use('/api-docs', swaggerUi.serve);
