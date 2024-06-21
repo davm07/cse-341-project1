@@ -10,6 +10,7 @@ const initDb = (callback) => {
     return callback(null, db);
   }
 
+  // eslint-disable-next-line no-undef
   MongoClient.connect(process.env.MONGODB_URI)
     .then((client) => {
       db = client;

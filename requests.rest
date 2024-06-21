@@ -2,12 +2,60 @@
 
 ###########Get all contacts###########
 ###Localhost###########
-    GET http://localhost:3000/contacts
+GET http://localhost:3000/contacts
 ###On server###########
-    GET https://cse-341-project1-7pk9.onrender.com/contacts
+GET https://cse-341-project1-7pk9.onrender.com/contacts
 
 ###########Get a contact by id###########
 ###Localhost###########
-    GET http://localhost:3000/contacts/66686d80f56eb6d8692b3c11
+GET http://localhost:3000/contacts/66744ae4ebb64be2b8c9d80c
 ###On server###########
-    GET https://cse-341-project1-7pk9.onrender.com/contacts/66686d80f56eb6d8692b3c11
+GET https://cse-341-project1-7pk9.onrender.com/contacts/
+
+###########Create a contact###########
+###Localhost###########
+POST http://localhost:3000/contacts
+Content-Type: application/json
+
+    {
+        "firstName": "Julian",
+        "lastName": "Saggeth",
+        "email": "julian.saggeth@gmail.com",
+        "favoriteColor": "pink",
+        "birthday": "1975-10-28"
+    }
+###On server###########
+POST https://cse-341-project1-7pk9.onrender.com/contacts
+Content-Type: application/json
+
+    {
+        "firstName": "Pedro",
+        "lastName": "Saggeth",
+        "email": "pedro.saggeth@gmail.com",
+        "favoriteColor": "pink",
+        "birthday": "1975-10-28"
+    }
+
+###########Update a contact###########
+###Localhost###########
+PUT http://localhost:3000/contacts/66744ae4ebb64be2b8c9d80c
+Content-Type: application/json
+
+    {
+        "favoriteColor": "blue"
+    }
+
+###On server###########
+PUT https://cse-341-project1-7pk9.onrender.com/contacts/66744ae4ebb64be2b8c9d80c
+Content-Type: application/json
+
+    {
+        "favoriteColor": "green"
+    }
+
+###########Delete a contact###########
+###Localhost###########
+DELETE http://localhost:3000/contacts/66745eccb8f5161ddac41802
+
+###On server###########
+DELETE https://cse-341-project1-7pk9.onrender.com/contacts/66745e9e194c97788207e90a
