@@ -18,7 +18,7 @@ POST http://localhost:3000/contacts
 Content-Type: application/json
 
     {
-        "firstName": "Julian",
+        "firstName": "Pepe",
         "lastName": "Saggeth",
         "email": "julian.saggeth@gmail.com",
         "favoriteColor": "pink",
@@ -38,11 +38,11 @@ Content-Type: application/json
 
 ###########Update a contact###########
 ###Localhost###########
-PUT http://localhost:3000/contacts/66744ae4ebb64be2b8c9d80c
+PUT http://localhost:3000/contacts/6676b0f0282c159c86e4fe21
 Content-Type: application/json
 
     {
-        "favoriteColor": "blue"
+        "favoriteColor": "red"
     }
 
 ###On server###########
@@ -55,7 +55,7 @@ Content-Type: application/json
 
 ###########Delete a contact###########
 ###Localhost###########
-DELETE http://localhost:3000/contacts/66745eccb8f5161ddac41802
+DELETE http://localhost:3000/contacts/6676b0f0282c159c86e4fe21
 
 ###On server###########
 DELETE https://cse-341-project1-7pk9.onrender.com/contacts/66745e9e194c97788207e90a

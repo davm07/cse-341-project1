@@ -22,7 +22,13 @@
         ],
         "responses": {
           "200": {
-            "description": "OK"
+            "description": "OK",
+            "schema": {
+              "type": "array",
+              "items": {
+                "$ref": "#/definitions/Contact"
+              }
+            }
           }
         }
       },
@@ -30,7 +36,7 @@
         "tags": [
           "Contacts"
         ],
-        "description": "",
+        "description": "Create a contact",
         "produces": [
           "application/json"
         ],
@@ -58,7 +64,7 @@
         "tags": [
           "Contacts"
         ],
-        "description": "",
+        "description": "Get a single contact",
         "produces": [
           "application/json"
         ],
@@ -72,7 +78,12 @@
         ],
         "responses": {
           "200": {
-            "description": "OK"
+            "description": "OK",
+            "schema": {
+              "items": {
+                "$ref": "#/definitions/Contact"
+              }
+            }
           }
         }
       },
@@ -80,7 +91,7 @@
         "tags": [
           "Contacts"
         ],
-        "description": "",
+        "description": "Update a contact",
         "produces": [
           "application/json"
         ],
@@ -112,7 +123,7 @@
         "tags": [
           "Contacts"
         ],
-        "description": "",
+        "description": "Delete a contact",
         "produces": [
           "application/json"
         ],
