@@ -4,13 +4,13 @@
 ###Localhost###########
 GET http://localhost:3000/contacts
 ###On server###########
-GET https://cse-341-project1-7pk9.onrender.com/contacts
+GET https://cse-341-project1-reva.onrender.com/contacts
 
 ###########Get a contact by id###########
 ###Localhost###########
 GET http://localhost:3000/contacts/66744ae4ebb64be2b8c9d80c
 ###On server###########
-GET https://cse-341-project1-7pk9.onrender.com/contacts/
+GET https://cse-341-project1-reva.onrender.com/contacts/66744ae4ebb64be2b8c9d80c
 
 ###########Create a contact###########
 ###Localhost###########
@@ -25,7 +25,7 @@ Content-Type: application/json
         "birthday": "1975-10-28"
     }
 ###On server###########
-POST https://cse-341-project1-7pk9.onrender.com/contacts
+POST https://cse-341-project1-reva.onrender.com/contacts
 Content-Type: application/json
 
     {
@@ -46,7 +46,7 @@ Content-Type: application/json
     }
 
 ###On server###########
-PUT https://cse-341-project1-7pk9.onrender.com/contacts/66744ae4ebb64be2b8c9d80c
+PUT https://cse-341-project1-reva.onrender.com/contacts/66744ae4ebb64be2b8c9d80c
 Content-Type: application/json
 
     {
@@ -58,4 +58,4 @@ Content-Type: application/json
 DELETE http://localhost:3000/contacts/6676b0f0282c159c86e4fe21
 
 ###On server###########
-DELETE https://cse-341-project1-7pk9.onrender.com/contacts/66745e9e194c97788207e90a
+DELETE https://cse-341-project1-reva.onrender.com/contacts/66745e9e194c97788207e90a
