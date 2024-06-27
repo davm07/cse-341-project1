@@ -8,7 +8,7 @@ GET https://cse-341-project1-reva.onrender.com/contacts
 
 ###########Get a contact by id###########
 ###Localhost###########
-GET http://localhost:3000/contacts/66744ae4ebb64be2b8c9d80c
+GET http://localhost:3000/contacts/66744ae4ebb64be2b8c9d80a
 ###On server###########
 GET https://cse-341-project1-reva.onrender.com/contacts/66744ae4ebb64be2b8c9d80c
 
@@ -18,11 +18,11 @@ POST http://localhost:3000/contacts
 Content-Type: application/json
 
     {
-        "firstName": "Pepe",
-        "lastName": "Saggeth",
-        "email": "julian.saggeth@gmail.com",
-        "favoriteColor": "pink",
-        "birthday": "1975-10-28"
+        "firstName": "Pablo",
+        "lastName": "Barrios",
+        "email": "barriospablo@gmail.com",
+        "favoriteColor": "red",
+        "birthday": "1970-09-19"
     }
 ###On server###########
 POST https://cse-341-project1-reva.onrender.com/contacts
@@ -38,11 +38,15 @@ Content-Type: application/json
 
 ###########Update a contact###########
 ###Localhost###########
-PUT http://localhost:3000/contacts/6676b0f0282c159c86e4fe21
+PUT http://localhost:3000/contacts/667c47036680a876e80642f7
 Content-Type: application/json
 
     {
-        "favoriteColor": "red"
+        "firstName": "Pedro",
+        "lastName": "Saggeth",
+        "email": "pedro.saggeth@gmail.com",
+        "favoriteColor": "pink",
+        "birthday": "1975-10-28"
     }
 
 ###On server###########
@@ -55,7 +59,7 @@ Content-Type: application/json
 
 ###########Delete a contact###########
 ###Localhost###########
-DELETE http://localhost:3000/contacts/6676b0f0282c159c86e4fe21
+DELETE http://localhost:3000/contacts/667c47036680a876e80642f5
 
 ###On server###########
 DELETE https://cse-341-project1-reva.onrender.com/contacts/66745e9e194c97788207e90a

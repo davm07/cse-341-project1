@@ -13,11 +13,19 @@ const getAllContacts = async (req, res) => {
 
 const getContact = async (req, res) => {
   //#swagger.tags = ['Contacts']
+  if (!ObjectId.isValid(req.params.id)) {
+    res.status(400).json({ message: 'Invalid id' });
+    return;
+  }
   const result = await mongodb
     .getDb()
     .db('project1')
     .collection('contacts')
     .findOne({ _id: new ObjectId(req.params.id) });
+  if (!result) {
+    res.status(404).json({ message: 'Invalid id' });
+    return;
+  }
   res.setHeader('Content-Type', 'application/json');
   res.status(200).json(result);
 };
@@ -45,14 +53,25 @@ const createContact = async (req, res) => {
 
 const updateContact = async (req, res) => {
   //#swagger.tags = ['Contacts']
+  if (!ObjectId.isValid(req.params.id)) {
+    res.status(400).json({ message: 'Invalid id' });
+    return;
+  }
   try {
     const id = new ObjectId(req.params.id);
     const { firstName, lastName, email, favoriteColor, birthday } = req.body;
-    const contactData = Object.fromEntries(
-      Object.entries({ firstName, lastName, email, favoriteColor, birthday }).filter(
-        ([key, value]) => value !== undefined
-      )
-    );
+    // const contactData = Object.fromEntries(
+    //   Object.entries({ firstName, lastName, email, favoriteColor, birthday }).filter(
+    //     ([key, value]) => value !== undefined
+    //   )
+    // );
+    const contactData = {
+      firstName: firstName,
+      lastName: lastName,
+      email: email,
+      favoriteColor: favoriteColor,
+      birthday: birthday
+    };
 
     const result = await mongodb
       .getDb()
@@ -64,6 +83,11 @@ const updateContact = async (req, res) => {
         { returnNewDocument: true, projection: { _id: 0 } }
       );
 
+    if (!result) {
+      res.status(404).json({ message: 'Invalid id' });
+      return;
+    }
+
     res.setHeader('Content-Type', 'application/json');
     res.status(200).json({ message: 'Contact updated successfully' });
   } catch (error) {
@@ -73,6 +97,10 @@ const updateContact = async (req, res) => {
 
 const deleteContact = async (req, res) => {
   //#swagger.tags = ['Contacts']
+  if (!ObjectId.isValid(req.params.id)) {
+    res.status(400).json({ message: 'Invalid id' });
+    return;
+  }
   try {
     const id = new ObjectId(req.params.id);
     const result = await mongodb
@@ -81,7 +109,12 @@ const deleteContact = async (req, res) => {
       .collection('contacts')
       .deleteOne({ _id: id });
     res.setHeader('Content-Type', 'application/json');
-    res.status(200).json({ message: 'Contact deleted successfully' });
+
+    if (result.deletedCount > 0) {
+      res.status(200).json({ message: 'Contact deleted successfully' });
+    } else {
+      res.status(404).json({ message: 'Contact not found' });
+    }
   } catch (error) {
     res.status(500).json({ message: 'Error deleting contact' });
   }
